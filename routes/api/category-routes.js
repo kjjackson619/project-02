@@ -21,6 +21,7 @@ router.get('/', (req, res) =>{
     })
 })
 
+//Get single category
 router.get('/:id', (req,res) =>{
     Category.findOne({
         where: {
@@ -49,5 +50,6 @@ router.get('/:id', (req,res) =>{
     })
 })
 
-router.post('/', (req,res))
 
+
+module.exports = router
