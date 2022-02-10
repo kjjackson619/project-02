@@ -1,6 +1,6 @@
 const Category = require("./Category");
 const Item = require("./Item");
-const User_Table = require("./User_Table");
+const User = require("./User");
 
 Category.hasMany(Item, {
   foreignKey: "category_id",
@@ -11,4 +11,13 @@ Item.belongsTo(Category, {
   onDelete: "SET NULL",
 });
 
-module.exports = { Category, Item, User_Table };
+User.hasMany(Item, {
+  foreignKey: "user_id",
+});
+
+Item.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "SET NULL",
+});
+
+module.exports = { Category, Item, User };
