@@ -4,21 +4,22 @@ router.get("/", (req, res) => {
   res.render("homepage");
 });
 
-// router.get("/login", (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect("/");
-//     return;
-//   }
+router.get("/login", (req, res) => {
+  // if (req.session.loggedIn) {
+  //   res.redirect("/");
+  //   return;
+  // }
+  console.log("login");
 
-//   res.render("login");
-// });
-
-router.get('/login', (req, res) => {
-  res.render('login');
+  res.render("login");
 });
 
-router.get('/signup', (req, res) => {
-  res.render('signup');
+// router.get('/login', (req, res) => {
+//   res.render('login');
+// });
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 module.exports = router;
