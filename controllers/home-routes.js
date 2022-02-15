@@ -6,14 +6,14 @@ const sequelize = require('sequelize')
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.render("homepage");
+  res.render("homepage",{loggedIn: req.session.loggedIn});
 });
 
 router.get("/login", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/");
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   console.log("login");
 
   res.render("login");
@@ -22,6 +22,12 @@ router.get("/login", (req, res) => {
 // router.get('/login', (req, res) => {
 //   res.render('login');
 // });
+
+router.get("/signup", (req, res) => {
+  
+  
+  res.render("signup");
+});
 
 router.get("/:id", (req,res) => {
   Item.findAll({
@@ -34,6 +40,7 @@ router.get("/:id", (req,res) => {
   })
   .then(dbItemData => {
     const items = dbItemData.map(item => item.get({plain: true}))
+    console.log(req.session)
 
     res.render('homepage', {
       items,
@@ -46,8 +53,5 @@ router.get("/:id", (req,res) => {
   })
 })
 
-router.get("/signup", (req, res) => {
-  res.render("signup");
-});
 
 module.exports = router;
