@@ -16,7 +16,7 @@ Item.init(
       allowNull: false,
     },
     picture: {
-      type: DataTypes.BLOB("long"),
+      type: DataTypes.STRING,
       allowNull: false,
     },
     category_id: {
