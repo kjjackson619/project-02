@@ -14,10 +14,6 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-<<<<<<< HEAD
-=======
-  console.log("login");
->>>>>>> ea18f0dafe49c5cb28554f11767b66b4ffd16fa1
 
   res.render("login");
 });
@@ -26,15 +22,8 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-<<<<<<< HEAD
 router.get('/signup', (req, res) => {
-  res.render('signup');
-=======
-router.get("/signup", (req, res) => {
-  
-  
-  res.render("signup");
->>>>>>> ea18f0dafe49c5cb28554f11767b66b4ffd16fa1
+  res.render('signup', {loggedIn: req.session.loggedIn});
 });
 
 router.get("/:id", (req,res) => {
