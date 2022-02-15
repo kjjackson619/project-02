@@ -1,15 +1,11 @@
 const router = require('express').Router()
-const { Item, Category, User } = require('../../models')
+const { Item, User } = require('../../models')
 
 //GET all items
 router.get('/', (req,res) => {
     Item.findAll({
         attributes: ['id', 'item_name', 'category_id', 'picture', 'user_id'],
         include: [
-            {
-                model: Category,
-                attributes: ['id', 'category_name']
-            },
             {
                 model: User,
                 attributes: ['id', 'username']
@@ -26,10 +22,6 @@ router.get('/:id', (req,res) =>{
         where: {id: req.params.id},
         attributes: ['id', 'item_name', 'category_id', 'picture', 'user_id'],
         include: [
-            {
-                model: Category,
-                attributes: ['id', 'category_name']
-            },
             {
                 model: User,
                 attributes: ['id', 'username']

@@ -1,6 +1,5 @@
 const req = require("express/lib/request");
 const { Item, User } = require("../models");
-const { findAll, getAttributes } = require("../models/Category");
 const sequelize = require('sequelize')
 
 const router = require("express").Router();
