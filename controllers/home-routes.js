@@ -5,21 +5,20 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/");
-  //   return;
-  // }
-  console.log("login");
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
   res.render("login");
 });
 
-// router.get('/login', (req, res) => {
-//   res.render('login');
-// });
+router.get('/login', (req, res) => {
+  res.render('login');
+});
 
-router.get("/signup", (req, res) => {
-  res.render("signup");
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
 
 module.exports = router;
