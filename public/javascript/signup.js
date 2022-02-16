@@ -23,4 +23,4 @@ async function signupFormHandler(event) {
     }
   }
 
-  document.querySelector(".signup-form").addEventListener('click', signupFormHandler)
+  document.querySelector("#signup-button").addEventListener('click', signupFormHandler)
