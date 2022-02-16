@@ -5,10 +5,10 @@
 
             <ul id="nav-mobile" class="right">
                 {{#if loggedIn}}
+                <li class="active pulse"><a href="/add">Add Item</a></li>
                 <li class="active pulse"><a id="logout">Logout</a></li>
                 <script src="/javascript/logout.js"></script>
                 {{else}}
-
 
 
                 <li class="active pulse"><a href="/login">Login</a></li>
@@ -16,7 +16,8 @@
 
                 <li class="active pulse"><a href="/signup">Sign Up</a></li>
                 {{/if}}
-
+                
+                
 
             </ul>
         </div>
