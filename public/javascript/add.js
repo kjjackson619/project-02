@@ -1,22 +1,20 @@
 async function addItem(event) {
   event.preventDefault();
+  
 
   const addName = document.querySelector("#name-add").value.trim();
   const addPicture = document.querySelector("#picture-add").value.trim();
+  const addCategory = document.querySelector("#cars").value.trim()
+  
+  
 
-  const addCategory = document.querySelector("#category-select").value.trim();
-  const categoryId = parseInt(addCategory);
-
-  const userId = req.session.user_id;
-
-  if (addName && addPicture && categoryId) {
+  if (addName && addPicture && addCategory) {
     const response = await fetch("/api/items", {
       method: "post",
       body: JSON.stringify({
         addName,
         addPicture,
-        categoryId,
-        userId,
+        addCategory,
       }),
       headers: { "Content-Type": "application/json" },
     });

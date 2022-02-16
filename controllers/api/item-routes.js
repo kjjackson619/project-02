@@ -55,9 +55,17 @@ router.put('/:id', (req,res) => {
 
 //Create an item
 router.post('/', (req,res) => {
-    Item.create(req.body)
+    Item.create({
+        item_name: req.body.addName,
+        picture: req.body.addPicture,
+        category_id: req.body.addCategory,
+        user_id: req.session.user_id
+    })
     .then(dbItemData => res.json(dbItemData))
-    .catch(err => res.status(400).json(err))
+    .catch(err => {
+        console.log(err)
+        res.status(400).json(err)
+    })
 })
 
 //delete an item
