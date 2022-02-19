@@ -30,6 +30,10 @@
 
 To start to the program on a localhost server (default port of 3001) run either `npm start` or `node server.js` in the bash terminal. When the server is running open your web browser of choice and enter `localhost:{port}` into your address bar. 
 
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/47041038/154309665-d5d66cb5-46a6-4ee9-ba4f-c5e59e21e6c7.png)
+
 ## Credits
 
 ### Contributors: 
