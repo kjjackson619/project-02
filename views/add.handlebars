@@ -1,25 +1,25 @@
 {{!-- name, picture, category user from session id --}}
 <div class="divider"></div>
-<div class="section">
+<div class="section row">
     <form class="add-form">
-        <div class="divider"></div>
+        {{!-- <div class="divider"></div> --}}
         <div class="section">
-            <div class="input-field col s12">
+            <div class=" col s6 offset-s3">
                 <label for="name-add">Item name: </label>
-                <input type="text" id="name-add" />
+                <input type="text" id="name-add"/>
             </div>
         </div>
-        <div class="divider"></div>
+        {{!-- <div class="divider"></div> --}}
         <div class="section">
-            <div class="input-field col s12">
+            <div class="col s6 offset-s3">
                 <label for="picture-add">Add picture link: </label>
                 <input type="text" id="picture-add" />
             </div>
         </div>
-        <div class="divider"></div>
+        {{!-- <div class="divider"></div> --}}
         <div class="section">
-            <label for="cars">Choose a car:</label>
-            <select id="cars" name="cars" size="3" class="browser-default" style="height: 16em">
+            <label for="cars" class=" col s6 offset-s3">Choose a car:</label>
+            <select id="cars" name="cars" size="3" class="browser-default col s6 offset-s3" style="height: 16em">
                 <option value="1">Travel</option>
                 <option value="2">Fashion</option>
                 <option value="3">Shoes</option>
@@ -37,10 +37,10 @@
                 <option value="15">Todo</option>
             </select>
         </div>
-        <div class="divider"></div>
+        {{!-- <div class="divider"></div> --}}
         <div class="section">
-            <div>
-                <button type="submit" id="add-button">Add</button>
+            <div class="col s6 offset-s3" style="margin-top: 1em;">
+                <button class="btn red waves-effect waves-red" type="submit" id="add-button">Add</button>
             </div>
         </div>
         <script src="/javascript/add.js"></script>
